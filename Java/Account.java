@@ -10,4 +10,9 @@ public class Account {
         this.document = document;
         this.email = email;
     }
+    void printDataAccount() {
+        System.out.println("Name: " + name);
+        System.out.println("Document: " + document);
+        System.out.println("Email: " + email);
+    }
 }
