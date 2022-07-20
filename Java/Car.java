@@ -2,7 +2,7 @@ public class Car {
     Integer id;
     String license;
     Account driver;
-    Integer passenger;
+    protected Integer passenger;
     
     public Car(String license, Account driver){
         this.license = license;
@@ -13,5 +13,18 @@ public class Car {
         System.out.println("License: " + license);
         System.out.println("Driver: " + driver.name);
         System.out.println("Passengers Allowed: " + passenger);
+    }
+
+    public Integer getPassenger(){
+        return passenger;
+    }
+
+    public void setPassenger(Integer passenger){
+        if (passenger >= 4) {
+            this.passenger = passenger;
+        }
+        else{
+            System.out.println("Please set a number equal or higer than 4");
+        }
     }
 }
