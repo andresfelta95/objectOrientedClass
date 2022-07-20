@@ -1,10 +1,10 @@
 <?php
 require_once('account.php');
 class Car{
-    public $id = integer;
-    public $license   = string;
-    public $driver    = string;
-    public $passanger = string;
+    public $id;
+    public $license;
+    public $driver;
+    protected $passanger;
 
     public function __construct($license, $driver) {
         $this->license = $license;
@@ -12,7 +12,23 @@ class Car{
     }
     
     public function PrintDataCar(){
-        echo "license: $this->license, conductor: {$this->driver->name}, document: {$this->driver->document}";
+        echo   "license: $this->license
+                Driver: {$this->driver->name}
+                Document: {$this->driver->document}
+                Number of passengers: $this->passanger";
+    }
+
+    public function getPassengers(){
+        return $this->passanger;
+    }
+
+    public function setPassenger($passenger) {
+        if ($passenger <= 4) {
+            $this->passanger = $passenger;
+        }
+        else {
+            echo "Please asing no more than 4 passengers";
+        }
     }
 }
 ?>
